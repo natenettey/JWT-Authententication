@@ -15,16 +15,23 @@
 .main_container{
     display: flex;
     font-family:'Outfit', sans-serif;
+    
+    
 }
-.form_container{
+.partition_one{
     flex: 0 0 50%;
     background-color: var(--color-secondary);
+    
     }
-.form_container,.image_cotainer{
+.partition_one,.partition_two{
     height: 100vh;
+    align-items: center;
+    justify-content: center;
+    
+    
 }
 
-.image_cotainer{
+.partition_two{
     flex: 1;
     background: linear-gradient(70deg, var(--color-violet-deep), var(--color-violet-pale));}
 .logo_bar{
@@ -33,6 +40,11 @@
 }
 .logo_bar,.logo_bar-text{
     background-color: var(--color-primary);
+}
 
-    
+.form_container{
+    margin: 0 auto;
+    background-color: aqua;
+    margin: 50px
+   
 }
