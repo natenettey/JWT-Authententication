@@ -1,0 +1,38 @@
+:root {
+    --color-primary:#ffffff;
+    --color-secondary:#f9f9fb;
+    --color-violet-deep:#571159;
+    --color-violet-pale:#873087;
+    --font-type:'Palanquin'; }
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+    
+}
+.main_container{
+    display: flex;
+    font-family:'Outfit', sans-serif;
+}
+.form_container{
+    flex: 0 0 50%;
+    background-color: var(--color-secondary);
+    }
+.form_container,.image_cotainer{
+    height: 100vh;
+}
+
+.image_cotainer{
+    flex: 1;
+    background: linear-gradient(70deg, var(--color-violet-deep), var(--color-violet-pale));}
+.logo_bar{
+    padding:15px;
+    font-family: 'Jura';
+}
+.logo_bar,.logo_bar-text{
+    background-color: var(--color-primary);
+
+    
+}
