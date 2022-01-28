@@ -3,7 +3,7 @@
   --color-secondary: #eeeeee;
   --color-violet-deep: #571159;
   --color-violet-pale: #873087;
-  --font-type: "Palanquin";
+  --font-type: "Outfit";
 }
 
 * {
@@ -47,6 +47,10 @@
    margin:10% 0 20% 15%;
     
 }
+.form_section-header h1{
+ margin-bottom: 20px;
+}
+
 .form_input {
    margin: 30px 0;
 }
@@ -65,5 +69,33 @@
 .login_form {
   /* width:50%;
     text-align:center; */
+}
+
+.login_form-terms hr{
+    margin-bottom: 10px;
+    width: 80%;
+}
+.login_form-terms span{
+ color: var(--color-violet-deep);
+ font-weight: bold;
+}
+.login_form-button{
+    display: block;
+   position: absolute;
+   left: 34%;
+   padding: 5px 5px;
+   width: 150px;
+   font-family: var(--font-type);
+   background-color: var(--color-violet-pale);
+   border: none;
+   border-radius: 10px;
+   color: white;
+   font-size: 15px;
+
+}
+.login_form-checkbox{
     
+}
+.login_form-terms input:active{
+    background-color: rgb(58, 3, 110);
 }
