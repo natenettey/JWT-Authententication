@@ -22,7 +22,7 @@
 }
 .partition_one,
 .partition_two {
-  height: 100vh;
+  min-height: 100vh;
   align-items: center;
   justify-content: center;
 }
@@ -72,7 +72,7 @@
 }
 
 .login_form-terms hr{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     width: 80%;
 }
 .login_form-terms span{
@@ -81,8 +81,7 @@
 }
 .login_form-button{
    display:block;
-   position: absolute;
-   left: 34%;
+   margin:50px 0;
    padding: 10px 5px;
    width: 150px;
    font-family: var(--font-type);
@@ -91,14 +90,30 @@
     var(--color-violet-deep),
     var(--color-violet-pale)
   );
-   border: none;
+   border: 1px outset rgb(73, 2, 75);
    border-radius: 10px;
    color: white;
    font-size: 15px;
    cursor: pointer;
 
 }
+.login_form-sign-in-option{
+    text-align: center;
+}
 .login_form-sign-in-option a{
     text-decoration: none;
     color: var(--color-violet-deep);
+    font-weight: bold;
+    
 }
+
+.image_section{
+    margin:20% 15% 20% 15%;
+    justify-content: center;
+    align-items: center;
+     
+ }
+ .image_section svg{
+     width:100% ;
+     height: 500px;
+ }
