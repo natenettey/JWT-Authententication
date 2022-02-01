@@ -13,6 +13,7 @@
 }
 .main_container {
   display: flex;
+  flex-wrap: wrap;
   font-family: "Outfit", sans-serif;
 }
 .partition_one {
@@ -127,4 +128,9 @@ transition: 1s;
 
 
  /* responsiveness */
- 
+ @media  screen and (max-width: 700px) {
+  .partition_one,
+  .partition_two {
+    flex: 100%;
+  }
+ }
