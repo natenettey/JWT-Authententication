@@ -133,4 +133,14 @@ transition: 1s;
   .partition_two {
     flex: 100%;
   }
+
+  .form_input input {
+    width: 90%;
+    margin-top: 5px;
+  }
+
+  .form_section{
+    margin:10% 0 20% 10%;
+     
+ }
  }
