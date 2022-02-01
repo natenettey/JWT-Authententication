@@ -97,6 +97,13 @@
    cursor: pointer;
 
 }
+.login_form-button:hover{
+  transform: translateY(-2px);
+  box-shadow: -8px 3px 28px -4px rgba(115,113,113,0.75);
+-webkit-box-shadow: -8px 3px 28px -4px rgba(115,113,113,0.75);
+-moz-box-shadow: -8px 3px 28px -4px rgba(115,113,113,0.75);
+transition: 1s;
+}
 .login_form-sign-in-option{
     text-align: center;
 }
@@ -117,3 +124,7 @@
      width:100% ;
      height: 500px;
  }
+
+
+ /* responsiveness */
+ 
