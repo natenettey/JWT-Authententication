@@ -14,5 +14,21 @@ form.onsubmit=(event)=>{
     //check if the passwords match
     if (password != repeat){
         alert("passwords do not match")
+    }else{
+        const result = await fetch('/api/register',{
+            method: 'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify({
+                username,
+                mail,
+                residence,
+                password,
+                repeat
+            })
+        }).then(res=>{
+            res.json
+        })
     }
 }
