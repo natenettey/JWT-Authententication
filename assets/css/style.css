@@ -1,0 +1,146 @@
+:root {
+  --color-primary: #ffffff;
+  --color-secondary: #eeeeee;
+  --color-violet-deep: #571159;
+  --color-violet-pale: #873087;
+  --font-type: "Outfit";
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.main_container {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Outfit", sans-serif;
+}
+.partition_one {
+  flex: 0 0 50%;
+  background-color: var(--color-secondary);
+  
+}
+.partition_one,
+.partition_two {
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.partition_two {
+  flex: 1;
+  background: linear-gradient(
+    70deg,
+    var(--color-violet-deep),
+    var(--color-violet-pale)
+  );
+}
+.logo_bar {
+  padding: 15px;
+  font-family: "Jura";
+}
+.logo_bar,
+.logo_bar-text {
+  background-color: var(--color-primary);
+}
+.form_section{
+   margin:10% 0 20% 15%;
+    
+}
+.form_section-header h1{
+ margin-bottom: 20px;
+}
+
+.form_input {
+   margin: 30px 0;
+}
+.form_input input {
+  width: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #b9b9b99d;
+  
+  
+}
+.form_input label {
+  display: inline-block;
+  width: 30%;
+}
+.login_form {
+  /* width:50%;
+    text-align:center; */
+}
+
+.login_form-terms hr{
+    margin-bottom: 20px;
+    width: 80%;
+}
+.login_form-terms span{
+ color: var(--color-violet-deep);
+ font-weight: bold;
+}
+.login_form-button{
+   display:block;
+   margin:50px 0;
+   padding: 10px 5px;
+   width: 150px;
+   font-family: var(--font-type);
+   background: linear-gradient(
+    70deg,
+    var(--color-violet-deep),
+    var(--color-violet-pale)
+  );
+   border: 1px outset rgb(73, 2, 75);
+   border-radius: 10px;
+   color: white;
+   font-size: 15px;
+   cursor: pointer;
+
+}
+.login_form-button:hover{
+  transform: translateY(-2px);
+  box-shadow: -8px 3px 28px -4px rgba(115,113,113,0.75);
+-webkit-box-shadow: -8px 3px 28px -4px rgba(115,113,113,0.75);
+-moz-box-shadow: -8px 3px 28px -4px rgba(115,113,113,0.75);
+transition: 1s;
+}
+.login_form-sign-in-option{
+    text-align: center;
+}
+.login_form-sign-in-option a{
+    text-decoration: none;
+    color: var(--color-violet-deep);
+    font-weight: bold;
+    
+}
+
+.image_section{
+    margin:20% 10% 20% 10%;
+    justify-content: center;
+    align-items: center;
+     
+ }
+ .image_section svg{
+     width:100% ;
+     height: 500px;
+ }
+
+
+ /* responsiveness */
+ @media  screen and (max-width: 700px) {
+  .partition_one,
+  .partition_two {
+    flex: 100%;
+  }
+
+  .form_input input {
+    width: 90%;
+    margin-top: 5px;
+  }
+
+  .form_section{
+    margin:10% 0 20% 10%;
+     
+ }
+ }
