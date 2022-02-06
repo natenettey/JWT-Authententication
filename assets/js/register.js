@@ -7,7 +7,7 @@ const password = document.getElementById("password")
 const repeat  = document.getElementById("repeat")
 
 //retrieve form data
-form.onsubmit=(event)=>{
+form.onsubmit=async (event)=>{
     event.preventDefault()
     console.log("the form works!")
 
@@ -15,6 +15,7 @@ form.onsubmit=(event)=>{
     if (password != repeat){
         alert("passwords do not match")
     }else{
+        //retrieve the data and submit form
         const result = await fetch('/api/register',{
             method: 'POST',
             headers:{
