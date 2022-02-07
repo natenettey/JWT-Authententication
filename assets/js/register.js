@@ -1,10 +1,10 @@
 //set up event listeners
 const form = document.getElementById("sign_up")
-const username = document.getElementById("user_name")
-const mail = document.getElementById("mail")
-const residence = document.getElementById("residence")
-const password = document.getElementById("password")
-const repeat  = document.getElementById("repeat")
+const username = document.getElementById("user_name").value
+const mail = document.getElementById("mail").value
+const residence = document.getElementById("residence").value
+const password = document.getElementById("password").value
+const repeat  = document.getElementById("repeat").value
 
 //retrieve form data
 form.onsubmit=async (event)=>{
@@ -12,7 +12,7 @@ form.onsubmit=async (event)=>{
     console.log("the form works!")
 
     //check if the passwords match
-    if (password != repeat){
+    if (password !== repeat){
         alert("passwords do not match")
     }else{
         //retrieve the data and submit form
