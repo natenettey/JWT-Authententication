@@ -2,6 +2,8 @@ const express = require("express")
 const dotenv = require("dotenv")
 const bodyparser = require("body-parser")
 const path = require("path")
+const userModel = require('./model/user_model')
+const bcrypt = require('bcryptjs')
 const connect_db  = require('./database/connection')
 
 
