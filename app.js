@@ -5,11 +5,15 @@ const path = require("path")
 const connect_db  = require('./database/connection')
 
 
-//setup express and bodyParser
+//setup express and dotenv
 const app=express()
 dotenv.config({path:"config.env"})
 const PORT = 5000
+
+//db connection
 connect_db()
+
+//body parser
 app.use (bodyparser.json())
 
 //set view engine
