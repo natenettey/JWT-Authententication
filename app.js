@@ -34,6 +34,10 @@ app.get("/", (req, res)=>{
 app.post("/api/register", async(req,res)=>{
     console.log(req.body)
    const {username, mail, residence, password:plainTextPassword} = req.body
+
+   //hash the password
+   const password = await bcrypt.hash(plainTextPassword, 10)
+   console.log(password)
   
 })
 app.listen(PORT, console.log(`Server running on http://localhost:${PORT}`))
