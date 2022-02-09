@@ -30,4 +30,10 @@ app.use("/js", express.static(path.resolve(__dirname,"assets/js/")) )
 app.get("/", (req, res)=>{
     res.render("index") 
 })
+
+app.post("/api/register", async(req,res)=>{
+    console.log(req.body)
+   const {username, mail, residence, password:plainTextPassword} = req.body
+  
+})
 app.listen(PORT, console.log(`Server running on http://localhost:${PORT}`))
