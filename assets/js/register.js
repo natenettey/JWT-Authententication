@@ -1,15 +1,16 @@
-//set up event listeners
 const form = document.getElementById("sign_up")
+
+
+//retrieve form data
+form.onsubmit=async (event)=>{
 const username = document.getElementById("user_name").value
 const mail = document.getElementById("mail").value
 const residence = document.getElementById("residence").value
 const password = document.getElementById("password").value
 const repeat  = document.getElementById("repeat").value
-
-//retrieve form data
-form.onsubmit=async (event)=>{
+    
     event.preventDefault()
-    console.log("the form works!")
+    console.log(username)
 
     //check if the passwords match
     if (password !== repeat){
@@ -29,7 +30,7 @@ form.onsubmit=async (event)=>{
                 repeat
             })
         }).then(res=>{
-            res.json
+            res.json()
         })
     }
 }
