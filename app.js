@@ -7,6 +7,7 @@ const bcrypt = require('bcryptjs')
 const connect_db  = require('./database/connection')
 
 
+
 //setup express and dotenv
 const app=express()
 dotenv.config({path:"config.env"})
@@ -33,11 +34,25 @@ app.get("/", (req, res)=>{
 
 app.post("/api/register", async(req,res)=>{
     console.log(req.body)
-   const {username, mail, residence, password:plainTextPassword} = req.body
+   const {username, email, residence, password:plainTextPassword} = req.body
 
    //hash the password
    const password = await bcrypt.hash(plainTextPassword, 10)
-   console.log(password)
+   console.log(password, email)
+
+   //create new user
+   try {
+      const response =  await userModel.create({
+           username,
+           email,
+           residence,
+           password
+       })
+       console.log("User created", response)
+   } catch (error) {
+       console.log(error)
+       return res.json({status:'error'})
+   }
   
 })
 app.listen(PORT, console.log(`Server running on http://localhost:${PORT}`))
