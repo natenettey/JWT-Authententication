@@ -4,7 +4,7 @@ const form = document.getElementById("sign_up")
 //retrieve form data
 form.onsubmit=async (event)=>{
 const username = document.getElementById("user_name").value
-const mail = document.getElementById("mail").value
+const email = document.getElementById("mail").value
 const residence = document.getElementById("residence").value
 const password = document.getElementById("password").value
 const repeat  = document.getElementById("repeat").value
@@ -24,7 +24,7 @@ const repeat  = document.getElementById("repeat").value
             },
             body:JSON.stringify({
                 username,
-                mail,
+                email,
                 residence,
                 password,
                 repeat
