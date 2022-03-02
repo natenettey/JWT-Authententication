@@ -32,5 +32,10 @@ const repeat  = document.getElementById("repeat").value
         }).then(res=>{
             res.json()
         })
+        if (result.status === 'ok' ){
+            
+        }else{
+            alert(result.error)
+        }
     }
 }

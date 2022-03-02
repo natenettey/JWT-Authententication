@@ -36,9 +36,20 @@ app.post("/api/register", async(req,res)=>{
     console.log(req.body)
    const {username, email, residence, password:plainTextPassword} = req.body
 
+   //check if all inputs have been received
+   if (!username || typeof username !== 'string'){
+       res.json({error:"Invalid Username"})
+   }else if(!email){
+      res.json({error:"Please add an email address"})
+   }else if(!residence){
+    res.json({error:"Please add a residence"})
+ }else if(!plainTextPassword){
+    res.json({error:"Please add a password"})
+ }
+
    //hash the password
    const password = await bcrypt.hash(plainTextPassword, 10)
-   console.log(password, email)
+   console.log(password, email) 
 
    //create new user
    try {
@@ -50,9 +61,18 @@ app.post("/api/register", async(req,res)=>{
        })
        console.log("User created", response)
    } catch (error) {
-       console.log(error)
-       return res.json({status:'error'})
+       console.log(error)// can use""error.message"
+       if (error.code === 11000){
+           return res.json({error:"email already inuse "})
+       }
+       throw error
    }
-  
+   res.json({status:'ok'})
 })
+
+//render login page
+app.get("/login", (req, res)=>{
+    res.render("login")
+})
+
 app.listen(PORT, console.log(`Server running on http://localhost:${PORT}`))
