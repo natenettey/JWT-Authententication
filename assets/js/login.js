@@ -19,11 +19,11 @@ const password = document.getElementById("password").value
                 email,
                 password
             })
-        }).then(res=>{
-            res.json()
-        })
+        }).then(res=>res.json()
+        )
         if (result.status === 'ok' ){
-            
+            alert("Success")
+            console.log(result.data)
         }else{
             alert(result.error)
         }

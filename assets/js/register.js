@@ -29,11 +29,10 @@ const repeat  = document.getElementById("repeat").value
                 password,
                 repeat
             })
-        }).then(res=>{
-            res.json()
-        })
+        }).then(res=>res.json()
+        )
         if (result.status === 'ok' ){
-            
+            alert("Success")
         }else{
             alert(result.error)
         }
