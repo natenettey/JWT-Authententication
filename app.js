@@ -5,6 +5,9 @@ const path = require("path")
 const userModel = require('./model/user_model')
 const bcrypt = require('bcryptjs')
 const connect_db  = require('./database/connection')
+const { status } = require("express/lib/response")
+const jwt  = require ("jsonwebtoken")
+const JWT_SECRET ="sdgsdfdvvsv%^$^%@#%^$&*&^%%^utfugvfujuihJ:>?>?>?<>}{}{p)_)_*(&^#$$%cgfvghv"
 
 
 
@@ -32,6 +35,7 @@ app.get("/", (req, res)=>{
     res.render("index") 
 })
 
+//logic for registration page
 app.post("/api/register", async(req,res)=>{
     console.log(req.body)
    const {username, email, residence, password:plainTextPassword} = req.body
@@ -70,9 +74,35 @@ app.post("/api/register", async(req,res)=>{
    res.json({status:'ok'})
 })
 
+
+
 //render login page
 app.get("/login", (req, res)=>{
     res.render("login")
+})
+
+//logic for login page
+app.post('/api/login', async(req, res)=>{
+    const {email, password}  = req.body
+
+    //get user with the passed email and password
+    const user = await userModel.findOne({email}).lean()
+    if(!user){
+        res.json({status:"error", error:"Invalid username / password"})
+    }
+
+    //check if the passwords match
+    if(await bcrypt.compare(password, user.password)){
+
+        const token = jwt.sign(
+            {
+                id:user._id,
+                username:user.username
+            },JWT_SECRET
+        )
+        return res.json({status: "ok", data:token})
+    }
+    return res.json({status:"error", error:"Invalid uswername/password"})
 })
 
 app.listen(PORT, console.log(`Server running on http://localhost:${PORT}`))
