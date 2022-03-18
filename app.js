@@ -26,7 +26,7 @@ app.use (bodyparser.json())
 app.set("view engine", "ejs")
 
 //setup paths for static assests and files
-app.use("/css", express.static(path.resolve(__dirname,"assets/css")))
+app.use("/css", express.static(path.resolve(__dirname,"assets/css/")))
 app.use("/js", express.static(path.resolve(__dirname,"assets/js/")) )
 
 
