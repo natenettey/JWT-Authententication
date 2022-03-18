@@ -44,6 +44,18 @@
 .logo_bar-text {
   background-color: var(--color-primary);
 }
+.error_container{
+  width: 80%;
+  padding: 10px;
+ display: flex;
+ justify-content: space-between;
+  background-color: rgba(235, 96, 96, 0.952);
+  border: 1px solid rgb(245, 54, 54);
+}
+.error_container p{
+  color: blue;
+}
+
 .form_section{
    margin:10% 0 20% 15%;
     
