@@ -67,7 +67,7 @@ app.post("/api/register", async(req,res)=>{
    } catch (error) {
        console.log(error)// can use""error.message"
        if (error.code === 11000){
-           return res.json({error:"email already inuse "})
+           return res.json({error:"Email already in use ! "})
        }
        throw error
    }
@@ -102,7 +102,7 @@ app.post('/api/login', async(req, res)=>{
         )
         return res.json({status: "ok", data:token})
     }
-    return res.json({status:"error", error:"Invalid uswername/password"})
+    return res.json({status:"error", error:"Invalid username/password"})
 })
 
 app.listen(PORT, console.log(`Server running on http://localhost:${PORT}`))

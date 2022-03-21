@@ -1,4 +1,6 @@
 const form = document.getElementById("sign_up")
+const error_display = document.querySelector(".error_container")
+const error_display_text = document.querySelector(".error_container-text")
 
 
 //retrieve form data
@@ -34,7 +36,14 @@ const repeat  = document.getElementById("repeat").value
         if (result.status === 'ok' ){
             alert("Success")
         }else{
-            alert(result.error)
+            error_display.style.display = "flex"
+            error_display_text.innerHTML = result.error
+            setTimeout(
+                ()=>{
+                    error_display.style.display = "none"
+                }, 5000
+            )
+            // alert(result.error)
         }
     }
 }

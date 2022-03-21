@@ -47,11 +47,11 @@
 
 .error_container{
   padding: 10px;
-  background-color: rgba(235, 96, 96, 0.952);
+  background-color: rgba(175, 25, 25, 0.952);
   border: 1px solid rgb(245, 54, 54);
 }
 .error_container p{
-  color: blue;
+  
 }
 .form_section{
    margin:10% 0 20% 15%;
