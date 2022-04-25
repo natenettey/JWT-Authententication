@@ -7,6 +7,7 @@ const bcrypt = require('bcryptjs')
 const connect_db  = require('./database/connection')
 const { status } = require("express/lib/response")
 const jwt  = require ("jsonwebtoken")
+const multer  = require ('multer')
 const JWT_SECRET ="sdgsdfdvvsv%^$^%@#%^$&*&^%%^utfugvfujuihJ:>?>?>?<>}{}{p)_)_*(&^#$$%cgfvghv"
 
 
@@ -104,5 +105,19 @@ app.post('/api/login', async(req, res)=>{
     }
     return res.json({status:"error", error:"Invalid username/password"})
 })
+
+
+//CONFIGURE MULTER FOR STORING FILE UPLOADS
+const storage  = multer.diskStorage({
+    destination:(req, file, cb)=>{
+        //set the destination
+        cb(null, 'uploads')
+    },
+    filename:(req, file, cb)=>{
+        cb(null, file.fieldname + '-' + Date.now())
+    }
+})
+
+const upload = multer({storage:storage})
 
 app.listen(PORT, console.log(`Server running on http://localhost:${PORT}`))
