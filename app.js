@@ -34,7 +34,7 @@ app.use('/', require('./server/routes/routes'))
 
 //CONFIGURE MULTER FOR STORING FILE UPLOADS
 const storage  = multer.diskStorage({
-    destination:(req, file, cb)=>{
+    destination:(req, file, cb)=>{ 
         //set the destination
         cb(null, 'uploads')
     },
