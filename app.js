@@ -8,6 +8,8 @@ const connect_db  = require('./database/connection')
 const { status } = require("express/lib/response")
 const jwt  = require ("jsonwebtoken")
 const multer  = require ('multer')
+const imgModel = require('./model/image_model')
+const fs = require('fs')
 const JWT_SECRET ="sdgsdfdvvsv%^$^%@#%^$&*&^%%^utfugvfujuihJ:>?>?>?<>}{}{p)_)_*(&^#$$%cgfvghv"
 
 
@@ -31,10 +33,8 @@ app.use("/css", express.static(path.resolve(__dirname,"assets/css/")))
 app.use("/js", express.static(path.resolve(__dirname,"assets/js/")) )
 
 
-//render the registration page on page load
-app.get("/", (req, res)=>{
-    res.render("index") 
-})
+//load routes
+app.use('/', require('./server/routes/routes'))
 
 //logic for registration page
 app.post("/api/register", async(req,res)=>{
@@ -119,5 +119,27 @@ const storage  = multer.diskStorage({
 })
 
 const upload = multer({storage:storage})
+
+
+// Step 8 - the POST handler for processing the uploaded file
+  
+app.post('/api/upload', upload.single('image'), (req, res, next) => {
+  
+    var obj = {
+        img: {
+            data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
+            contentType: 'image/png'
+        }
+    }
+    imgModel.create(obj, (err, item) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+             item.save();
+            res.json({obj});
+        }
+    });
+});
 
 app.listen(PORT, console.log(`Server running on http://localhost:${PORT}`))
