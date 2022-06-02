@@ -1,0 +1,27 @@
+:root {
+    --color-primary: #f5f6ff;
+    --color-secondary: #eeeeee;
+    --color-violet-deep: #571159;
+    --color-violet-pale: #873087;
+    --font-type: "Outfit";
+  }
+
+.dashboard {
+    background-color:var(--color-primary);
+    display: flex;
+    min-height: 100vh;
+    padding:15px
+  }
+  .sidebar{
+
+    min-width:30px;
+    background: linear-gradient(
+    70deg,
+    var(--color-violet-deep),
+    var(--color-violet-pale)
+  );
+  border-radius: 20px;
+  }
+  .main_content{
+    flex-grow: 1;
+  }
