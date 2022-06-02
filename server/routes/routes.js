@@ -9,6 +9,7 @@ router.get('/', render.home_page)
 router.post('/api/register', controller.register)
 router.get('/login', render.login_page)
 router.post('/api/login', controller.login)
+router.get('/dashboard',render.user_page)
 // router.post('/api/login', controller.login)
 
 
