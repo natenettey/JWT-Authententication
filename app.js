@@ -27,6 +27,7 @@ app.set("view engine", "ejs")
 //setup paths for static assests and files
 app.use("/css", express.static(path.resolve(__dirname,"assets/css/")))
 app.use("/js", express.static(path.resolve(__dirname,"assets/js/")) )
+app.use("/images", express.static(path.resolve(__dirname,"assets/img/")))
 //load routes
 app.use('/', require('./server/routes/routes'))
 
