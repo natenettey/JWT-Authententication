@@ -1,5 +1,5 @@
 :root {
-    --color-primary: #f5f6ff;
+    --color-primary: #eff0ff;
     --color-secondary: #eeeeee;
     --color-violet-deep: #571159;
     --color-violet-pale: #873087;
@@ -10,7 +10,7 @@
     background-color:var(--color-primary);
     display: flex;
     min-height: 100vh;
-    padding:15px
+    margin:30px
   }
   .sidebar{
 
@@ -24,4 +24,42 @@
   }
   .main_content{
     flex-grow: 1;
+    margin-left:30px;
   }
+  .greeting_card--one{
+    background-color: #ffc37c;
+  }
+.greeting_cards{
+  display: flex;
+  justify-content: space-evenly;
+ 
+}
+.greeting_cards p{
+ font-size: 20px;
+ margin-top: 10px;
+}
+.content{
+  display: flex;
+  justify-content: space-between;
+}
+.greeting_card--one, .greeting_card--two{
+  
+  /* flex-wrap: wrap;
+  justify-content: space-between; */
+  height: 35%;
+  padding: 20px;
+  font-family: var(--font-type);
+  border-radius: 20px;  
+}
+.greeting_card--image img{
+  height:130px;
+
+}
+.greeting_card--one{
+  flex:0 0 50%;
+}
+.greeting_card--two{
+  background-color: white;
+  margin-left: 20px;
+  flex:0 0 50%;
+}
